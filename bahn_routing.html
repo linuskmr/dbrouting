@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+        :root {
+            color-scheme: light dark;
+            --border-radius: 5px;
+            --secondary-color: #eee;
+            --font-color: black;
+            --bg-color: white;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --secondary-color: #151515;
+                --font-color: #ccc;
+                --bg-color: black;
+            }
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.5;
+            background-color: var(--bg-color);
+            color: var(--font-color);
+        }
+        fieldset {
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+        }
+        button {
+            font-size: medium;
+            border: none;
+            padding: 10px 20px;
+            background-color: dodgerblue;
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        input {
+            background-color: var(--secondary-color);
+            padding: 10px;
+            border: none;
+            border-radius: var(--border-radius);
+            width: -moz-available;
+        }
+        a, a:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    
+<h1>Bahn Routing</h1>
+<p>An adjustable route planer for traveling with the Deutsche Bahn.</p>
+
+<a href="">Learn more</a>
+
+
+<!--
+<p>
+    By leveraging the <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra Algorithm</a> with adjustable weights for edges,
+    this tool allows you to give you more flexibility when planning your trips than the journey planer of the Deutsche Bahn. Want to reduce the price, the travel time or the number of changes? Want to take a bike with you?
+</p>
+<p>
+    A friend told me that you can see since recently if free bike spaces are available.
+    But if there is no one free, the DB planner does not look for an alternative route with a free bicycle space.
+</p>
+-->
+
+
+<form action="bahn_routing_results.html" method="get">
+    <fieldset>
+        <legend>Where to go?</legend>
+
+        <label for="start">Start</label>
+        <input type="text" id="start" name="start" required list="stations" placeholder="Hamburg">
+
+        <label for="target">Target</label>
+        <input type="text" id="target" name="target" required list="stations" placeholder="Berlin">
+
+        <datalist id="stations">
+            <option value="Hamburg"></option>
+            <option value="Berlin"></option>
+            <option value="Braunschweig"></option>
+            <option value="Uelzen"></option>
+            <option value="München"></option>
+            <option value="Kiel"></option>
+            <option value="Lübeck"></option>
+            <option value="Augsburg"></option>
+            <option value="Osnabrück"></option>
+            <option value="Flensburg"></option>
+        </datalist> 
+    </fieldset>
+
+    <fieldset>
+        <legend>Weights</legend>
+
+        <label for="duration">Duration</label>
+        <input type="number" id="duration" name="duration" value="1">
+
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price" value="1">
+    </fieldset>
+
+    <button type="submit">Calculate</button>
+</form>
+
+</body>
+
+</html>

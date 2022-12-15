@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+        :root {
+            color-scheme: light dark;
+            --border-radius: 5px;
+            --secondary-color: #eee;
+            --font-color: black;
+            --bg-color: white;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --secondary-color: #151515;
+                --font-color: #ccc;
+                --bg-color: black;
+            }
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.5;
+            background-color: var(--bg-color);
+            color: var(--font-color);
+        }
+        fieldset {
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+        }
+        button {
+            font-size: medium;
+            border: none;
+            padding: 10px 20px;
+            background-color: dodgerblue;
+            color: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        input {
+            background-color: var(--secondary-color);
+            padding: 10px;
+            border: none;
+            border-radius: var(--border-radius);
+            width: -moz-available;
+        }
+        a, a:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+        table, td {
+
+        }
+        td {
+            padding: 20px 10px;
+        }
+        tr.umsteigezeit {
+            background-color: var(--secondary-color);
+        }
+        td.duration {
+            font-size: small;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Bahn Routing</h1>
+
+<table>
+    <tr>
+        <td>15:26</td>
+        <td>Braunschweig</td>
+        <td>Gleis 7</td>
+    </tr>
+    <tr>
+        <td class="duration">19 min</td>
+        <td>🚄 ENO RE50 (83571)</td>
+    </tr>
+    <tr>
+        <td>15:45</td>
+        <td>Wolfsburg</td>
+        <td>Gleis 8</td>
+    </tr>
+    <tr class="umsteigezeit">
+        <td class="duration">9 min</td>
+        <td>⏳ Umsteigezeit</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>15:54</td>
+        <td>Wolfsburg</td>
+        <td>Gleis 5</td>
+    </tr>
+    <tr>
+        <td class="duration">1h 10min</td>
+        <td>🚄 IC 145</td>
+    </tr>
+    <tr>
+        <td>17:04</td>
+        <td>Berlin-Spandau</td>
+        <td>Gleis 5</td>
+    </tr>
+</table>
+
+</body>
+
+</html>
